@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <title>Moving sprites</title>
 <body>
-<script src="../pixi/pixi.min.js"></script>
+<script src="learningPixi-master/pixi/pixi.min.js"></script>
 <script>
 
 //Aliases
@@ -44,7 +44,7 @@ var filter;
 
 
 // create a video texture from a path
-var texture = PIXI.Texture.fromVideo('../../asserts/v.mp4');
+var texture = PIXI.Texture.fromVideo('./asserts/v.mp4');
 texture.baseTexture.autoPlay = false;
 videoSource = texture.baseTexture.source
 videoSource.loop= true;
@@ -57,7 +57,7 @@ app.stage.addChild(videoSprite);
 CustomFilter.prototype = Object.create(PIXI.AbstractFilter.prototype);
 CustomFilter.prototype.constructor = CustomFilter;
 
-PIXI.loader.add('shader','../../asserts/shader.frag');
+PIXI.loader.add('shader','./asserts/shader.frag');
 PIXI.loader.once('complete', onLoaded);
 PIXI.loader.load();
 
