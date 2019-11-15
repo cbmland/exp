@@ -1,0 +1,114 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Moving sprites</title>
+<body>
+<script src="../pixi/pixi.min.js"></script>
+<script>
+
+//Aliases
+let Application = PIXI.Application,
+    Container = PIXI.Container,
+    loader = PIXI.loader,
+    resources = PIXI.loader.resources,
+    TextureCache = PIXI.utils.TextureCache,
+    Sprite = PIXI.Sprite;
+
+//Create a Pixi Application
+let app = new Application({ 
+    width: 640,
+    height: 640,
+    antialiasing: true, 
+    transparent: true,
+    resolution: 1,
+
+  }
+);
+
+//Add the canvas that Pixi automatically created for you to the HTML document
+document.body.appendChild(app.view);
+
+//The `renderer.view` is just an ordinary `<canvas>` element.
+//Here's how you can reference to add an optional dashed
+//border around the canvas
+app.renderer.view.style.border = "1px dashed black";
+
+//To resize the canvas
+app.renderer.resize(512, 512);
+
+//To change the background color
+app.renderer.backgroundColor = 0x061639;
+
+//Define any variables that are used in more than one function
+let videoSprite,videoSource;
+var filter;
+
+
+// create a video texture from a path
+var texture = PIXI.Texture.fromVideo('../../asserts/v.mp4');
+texture.baseTexture.autoPlay = false;
+videoSource = texture.baseTexture.source
+videoSource.loop= true;
+
+// create a new Sprite using the video texture (yes it's that easy)
+videoSprite = new PIXI.Sprite(texture);
+
+app.stage.addChild(videoSprite);
+
+CustomFilter.prototype = Object.create(PIXI.AbstractFilter.prototype);
+CustomFilter.prototype.constructor = CustomFilter;
+
+PIXI.loader.add('shader','../../asserts/shader.frag');
+PIXI.loader.once('complete', onLoaded);
+PIXI.loader.load();
+
+//Start the game loop by adding the `gameLoop` function to
+//Pixi's `ticker` and providing it with a `delta` argument.
+//Any functions added to the `ticker` will be called 60 times per second.
+//This means that the `gameLoop` function (defined in the code ahead) will be updated
+//60 times per second.
+app.ticker.add(delta => gameLoop(delta));
+
+
+function onLoaded (loader, res) {
+    var fragmentSrc = res.shader.data;
+    filter = new CustomFilter(fragmentSrc);
+    videoSprite.filters = [filter];
+    gameLoop();
+}
+
+function CustomFilter(fragmentSource)
+{
+
+    PIXI.AbstractFilter.call(this,
+        // vertex shader
+        null,
+        // fragment shader
+        fragmentSource
+    );
+}
+
+
+function gameLoop(delta){
+
+
+}
+
+document.addEventListener('click',function(){
+
+    playSource()
+})
+
+function playSource(){
+
+    console.log('play');
+    videoSource.play()
+}
+setTimeout(function () {
+    playSource()
+
+},1500)
+
+</script>
+</body>
+
+
