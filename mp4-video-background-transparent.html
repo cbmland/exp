@@ -3,14 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="./js/CConsole.js" ></script>
 </head>
 <body>
 <p style="width:270px; height: 480px; margin: auto;position:relative;">
 
-    <video width="270" height="480" autoplay="" preload="auto" loop="" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true" style="position:absolute;mix-blend-mode:screen;left:0;top:0;z-index:1;" src="asserts/rains-s.mp4"></video>
+    <video id="video" width="270" height="480" autoplay="" preload="auto" loop="" webkit-playsinline="true" playsinline="true" x5-video-player-type="h5" x5-video-orientation="portraint" x5-video-player-fullscreen="true" style="position:absolute;mix-blend-mode:screen;left:0;top:0;z-index:1;" src="asserts/rains-s.mp4"></video>
 
     <img width="270" height="480" alt="景物素材图" style="display:block;" src="asserts/school_overcast-s.jpg">
 </p>
 
+<script>
+    document.addEventListener('click',function(){
+
+        playSource()
+    })
+
+    function playSource(){
+
+        console.log('play');
+
+        var videoSource = document.getElementById('video')
+        videoSource.play()
+    }
+
+</script>
 </body>
 </html>
