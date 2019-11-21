@@ -49,6 +49,7 @@ var texture = PIXI.Texture.fromVideo('./asserts/v.mp4');
 texture.baseTexture.autoPlay = false;
 videoSource = texture.baseTexture.source
 videoSource.loop= true;
+videoSource.muted = true;
 
 // create a new Sprite using the video texture (yes it's that easy)
 videoSprite = new PIXI.Sprite(texture);
@@ -105,6 +106,7 @@ function playSource(){
     videoSource.play()
 }
 setTimeout(function () {
+
     playSource()
 
 },1500)
