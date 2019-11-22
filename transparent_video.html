@@ -52,9 +52,10 @@ app.renderer.backgroundColor = 0x061639;
 let videoSprite,videoSource;
 var filter;
 
-
+var video = document.getElementById('video');
 // create a video texture from a path
-var texture = PIXI.Texture.fromVideo('./asserts/v.mp4');
+//var texture = PIXI.Texture.fromVideo('./asserts/v.mp4');
+var texture = PIXI.Texture.fromVideo(video);
 texture.baseTexture.autoPlay = false;
 videoSource = texture.baseTexture.source;
 videoSource.loop= true;
