@@ -7,7 +7,9 @@
     <script src="./js/CConsole.js" ></script>
 </head>
 <body>
-<video id="video" width="270" height="480" autoplay="" preload="auto" muted loop="" webkit-playsinline="true" playsinline="true" src="asserts/v.mp4"></video>
+<input type="button" onclick="playSource()" value="播放">
+<br/>
+<video id="video" width="270" height="480" preload="auto" muted loop="" webkit-playsinline="true" playsinline="true" src="asserts/v.mp4"></video>
 
 
 
@@ -54,7 +56,7 @@ var filter;
 // create a video texture from a path
 var texture = PIXI.Texture.fromVideo('./asserts/v.mp4');
 texture.baseTexture.autoPlay = false;
-videoSource = texture.baseTexture.source
+videoSource = texture.baseTexture.source;
 videoSource.loop= true;
 videoSource.muted = true;
 
@@ -104,21 +106,22 @@ function gameLoop(delta){
 
 document.addEventListener('click',function(){
 
-    playSource()
+    //playSource()
 })
 
 function playSource(){
 
     console.log('play');
-    videoSource.play()
+    videoSource.play();
+
+    var video = document.getElementById('video');
+    video.play()
+
 }
-setTimeout(function () {
 
-    playSource()
-
-},1500)
 
 </script>
+
 </body>
 
 
