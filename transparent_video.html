@@ -17,96 +17,88 @@
 
     eruda.init();
 
-//Aliases
-let Application = PIXI.Application,
-    Container = PIXI.Container,
-    loader = PIXI.loader,
-    resources = PIXI.loader.resources,
-    TextureCache = PIXI.utils.TextureCache,
-    Sprite = PIXI.Sprite;
+    //Aliases
+    let Application = PIXI.Application,
+        Container = PIXI.Container,
+        loader = PIXI.loader,
+        resources = PIXI.loader.resources,
+        TextureCache = PIXI.utils.TextureCache,
+        Sprite = PIXI.Sprite;
 
-//Create a Pixi Application
-let app = new Application({ 
-    width: 640,
-    height: 640,
-    antialiasing: true, 
-    transparent: true,
-    resolution: 1,
+    //Create a Pixi Application
+    let app = new Application({
+            width: 640,
+            height: 640,
+            antialiasing: true,
+            transparent: true,
+            resolution: 1,
 
-  }
-);
+        }
+    );
 
-//Add the canvas that Pixi automatically created for you to the HTML document
-document.body.appendChild(app.view);
+    //Add the canvas that Pixi automatically created for you to the HTML document
+    document.body.appendChild(app.view);
 
-//The `renderer.view` is just an ordinary `<canvas>` element.
-//Here's how you can reference to add an optional dashed
-//border around the canvas
-app.renderer.view.style.border = "1px dashed black";
+    //The `renderer.view` is just an ordinary `<canvas>` element.
+    //Here's how you can reference to add an optional dashed
+    //border around the canvas
+    app.renderer.view.style.border = "1px dashed black";
 
-//To resize the canvas
-app.renderer.resize(512, 512);
+    //To resize the canvas
+    app.renderer.resize(512, 512);
 
-//To change the background color
-app.renderer.backgroundColor = 0x061639;
+    //To change the background color
+    app.renderer.backgroundColor = 0x061639;
 
-//Define any variables that are used in more than one function
-let videoSprite,videoSource;
-var filter;
-
-var video = document.getElementById('video');
-// create a video texture from a path
-//var texture = PIXI.Texture.fromVideo('./asserts/v.mp4');
-    var shaderOnload = false;
-
-
-
-document.addEventListener('click',function(){
-
-    //playSource()
-})
-
-function playSource(){
-
-    console.log('play');
-    //videoSource.play();
+    //Define any variables that are used in more than one function
+    let videoSprite,videoSource;
+    var filter;
 
     var video = document.getElementById('video');
+    // create a video texture from a path
+    //var texture = PIXI.Texture.fromVideo('./asserts/v.mp4');
 
 
-    setTimeout(function(){
 
-        if(shaderOnload===false){
 
-            var texture = PIXI.Texture.fromVideo(video);
-            texture.baseTexture.autoPlay = false;
-            videoSource = texture.baseTexture.source;
-            videoSource.loop= true;
-            videoSource.muted = true;
+    document.addEventListener('click',function(){
+
+        //playSource()
+    })
+
+    function playSource(){
+
+        console.log('play');
+        //videoSource.play();
+
+        var video = document.getElementById('video');
+        video.play()
+
+
+        var texture = PIXI.Texture.fromVideo(video);
+        texture.baseTexture.autoPlay = false;
+        videoSource = texture.baseTexture.source;
+        videoSource.loop= true;
+        videoSource.muted = true;
 
 // create a new Sprite using the video texture (yes it's that easy)
-            videoSprite = new PIXI.Sprite(texture);
+        videoSprite = new PIXI.Sprite(texture);
 
-            app.stage.addChild(videoSprite);
+        app.stage.addChild(videoSprite);
 
-            CustomFilter.prototype = Object.create(PIXI.AbstractFilter.prototype);
-            CustomFilter.prototype.constructor = CustomFilter;
+        CustomFilter.prototype = Object.create(PIXI.AbstractFilter.prototype);
+        CustomFilter.prototype.constructor = CustomFilter;
 
-            PIXI.loader.add('shader','./asserts/shader.frag');
-            PIXI.loader.once('complete', onLoaded);
-            PIXI.loader.load();
-
+        PIXI.loader.add('shader','./asserts/shader.frag');
+        PIXI.loader.once('complete', onLoaded);
+        PIXI.loader.load();
 
 //Start the game loop by adding the `gameLoop` function to
 //Pixi's `ticker` and providing it with a `delta` argument.
 //Any functions added to the `ticker` will be called 60 times per second.
 //This means that the `gameLoop` function (defined in the code ahead) will be updated
 //60 times per second.
-            app.ticker.add(delta => gameLoop(delta));
-
-        }
-
-
+        app.ticker.add(delta => gameLoop(delta));
 
 
         function onLoaded (loader, res) {
@@ -114,7 +106,6 @@ function playSource(){
             var fragmentSrc = res.shader.data;
             filter = new CustomFilter(fragmentSrc);
             videoSprite.filters = [filter];
-            shaderOnload = true
 
         }
         function gameLoop(delta){
@@ -131,15 +122,8 @@ function playSource(){
             );
         }
 
-        video.play();
 
-    },1000)
-
-
-
-
-
-}
+    }
 
 
 </script>
