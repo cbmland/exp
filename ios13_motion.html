@@ -42,22 +42,23 @@
     <canvas id="renderCanvas"></canvas>
     <script>
     	
-    	//if (window.DeviceMotionEvent && window.DeviceMotionEvent.requestPermission){
-    		function request(){
-    		alert(0)
-		    window.DeviceMotionEvent.requestPermission()
-			.then(response => {
-			  if (response == 'granted') {
-			    // permission granted
-			    init();
-			    
-			  } else {
-			    // permission not granted
-			  }
-			})
+    	function request(){
+			if (window.DeviceMotionEvent && window.DeviceMotionEvent.requestPermission){
+			    window.DeviceMotionEvent.requestPermission()
+				.then(response => {
+				  if (response == 'granted') {
+				    // permission granted
+				    init();
+				    
+				  } else {
+				    // permission not granted
+				  }
+				})
+			}else{
+				init();
 			}
-		//}
-		
+		}
+		request()
 		function init(){
 		        var canvas = document.getElementById("renderCanvas");
 
