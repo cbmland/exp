@@ -41,7 +41,7 @@
     <canvas id="renderCanvas"></canvas>
     <script>
     	
-    	if (window.DeviceMotionEvent && window.DeviceMotionEvent.requestPermission){
+    	//if (window.DeviceMotionEvent && window.DeviceMotionEvent.requestPermission){
 		    window.DeviceMotionEvent.requestPermission()
 			.then(response => {
 			  if (response == 'granted') {
@@ -50,7 +50,7 @@
 			    // permission not granted
 			  }
 			})
-		}
+		//}
 
         var canvas = document.getElementById("renderCanvas");
 
