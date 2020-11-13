@@ -151,8 +151,8 @@ if (reversed == null) { reversed = false; }
 		if(this.totalFrames == 1) {
 			this.isSingleFrame = true;
 		}
-		var col = 60;
-		var num = 10000
+		var col = 37;
+		var num = 8000
 		for (var i = 0; i < num; i++) {
 		
 			var mc = new lib.wolf()
@@ -177,15 +177,15 @@ p.nominalBounds = new cjs.Rectangle(0,0,0,0);
 // library properties:
 lib.properties = {
 	id: '451A571680D8A540BE323B9D79EE43FF',
-	width: 1280,
-	height: 720,
+	width: 750,
+	height: 1334,
 	fps: 60,
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/createJsPerfTest_atlas_1.png?1605244245083", id:"createJsPerfTest_atlas_1"},
-		{src:"images/createJsPerfTest_atlas_2.png?1605244245083", id:"createJsPerfTest_atlas_2"},
-		{src:"images/createJsPerfTest_atlas_3.png?1605244245083", id:"createJsPerfTest_atlas_3"}
+		{src:"images/createJsPerfTest_atlas_1.png?1605251743763", id:"createJsPerfTest_atlas_1"},
+		{src:"images/createJsPerfTest_atlas_2.png?1605251743763", id:"createJsPerfTest_atlas_2"},
+		{src:"images/createJsPerfTest_atlas_3.png?1605251743763", id:"createJsPerfTest_atlas_3"}
 	],
 	preloads: []
 };
