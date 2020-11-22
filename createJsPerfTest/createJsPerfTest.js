@@ -86,7 +86,7 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.元件1();
 	this.instance.setTransform(342.2,148.5,1,1,0,0,0,342.2,148.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:542.2},29).to({x:342.2},30).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).to({x:542.2},29,cjs.Ease.bounceOut).to({x:342.2},30,cjs.Ease.bounceOut).wait(1));
 
 	this._renderFirstFrame();
 
@@ -109,12 +109,12 @@ if (reversed == null) { reversed = false; }
 	this.instance = new lib.元件1();
 	this.instance.setTransform(342.2,148.5,1,1,0,0,0,342.2,148.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({regX:342.5,regY:149,x:349.35,y:149},0).wait(1).to({x:356.25},0).wait(1).to({x:363.15},0).wait(1).to({x:370.05},0).wait(1).to({x:376.95},0).wait(1).to({x:383.85},0).wait(1).to({x:390.75},0).wait(1).to({x:397.65},0).wait(1).to({x:404.55},0).wait(1).to({x:411.45},0).wait(1).to({x:418.35},0).wait(1).to({x:425.25},0).wait(1).to({x:432.15},0).wait(1).to({x:439.05},0).wait(1).to({x:445.9},0).wait(1).to({x:452.8},0).wait(1).to({x:459.7},0).wait(1).to({x:466.6},0).wait(1).to({x:473.5},0).wait(1).to({x:480.4},0).wait(1).to({x:487.3},0).wait(1).to({x:494.2},0).wait(1).to({x:501.1},0).wait(1).to({x:508},0).wait(1).to({x:514.9},0).wait(1).to({x:521.8},0).wait(1).to({x:528.7},0).wait(1).to({x:535.6},0).wait(1).to({x:542.5},0).wait(1).to({x:535.8},0).wait(1).to({x:529.15},0).wait(1).to({x:522.5},0).wait(1).to({x:515.8},0).wait(1).to({x:509.15},0).wait(1).to({x:502.5},0).wait(1).to({x:495.8},0).wait(1).to({x:489.15},0).wait(1).to({x:482.5},0).wait(1).to({x:475.8},0).wait(1).to({x:469.15},0).wait(1).to({x:462.5},0).wait(1).to({x:455.8},0).wait(1).to({x:449.15},0).wait(1).to({x:442.5},0).wait(1).to({x:435.8},0).wait(1).to({x:429.15},0).wait(1).to({x:422.5},0).wait(1).to({x:415.8},0).wait(1).to({x:409.15},0).wait(1).to({x:402.5},0).wait(1).to({x:395.8},0).wait(1).to({x:389.15},0).wait(1).to({x:382.5},0).wait(1).to({x:375.8},0).wait(1).to({x:369.15},0).wait(1).to({x:362.5},0).wait(1).to({x:355.8},0).wait(1).to({x:349.15},0).wait(1).to({x:342.5},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({regX:342.5,regY:149,x:343,y:149},0).wait(1).to({x:344.55},0).wait(1).to({x:347.15},0).wait(1).to({x:350.8},0).wait(1).to({x:355.45},0).wait(1).to({x:361.15},0).wait(1).to({x:367.9},0).wait(1).to({x:375.7},0).wait(1).to({x:384.5},0).wait(1).to({x:394.35},0).wait(1).to({x:405.25},0).wait(1).to({x:417.2},0).wait(1).to({x:430.2},0).wait(1).to({x:444.2},0).wait(1).to({x:459.25},0).wait(1).to({x:475.35},0).wait(1).to({x:492.45},0).wait(1).to({x:510.65},0).wait(1).to({x:529.85},0).wait(1).to({x:535.15},0).wait(1).to({x:514.55},0).wait(1).to({x:493},0).wait(1).to({x:470.4},0).wait(1).to({x:446.85},0).wait(1).to({x:422.25},0).wait(1).to({x:396.65},0).wait(1).to({x:370.1},0).wait(1).to({x:342.5},0).wait(1).to({x:380.85},0).wait(1).to({x:413.35},0).wait(1).to({x:439.95},0).wait(1).to({x:460.6},0).wait(1).to({x:475.35},0).wait(1).to({x:484.2},0).wait(1).to({x:487.2},0).wait(1).to({x:484.2},0).wait(1).to({x:475.35},0).wait(1).to({x:460.6},0).wait(1).to({x:439.95},0).wait(1).to({x:413.35},0).wait(1).to({x:380.85},0).wait(1).to({x:342.5},0).wait(1).to({x:363.5},0).wait(1).to({x:379.3},0).wait(1).to({x:389.8},0).wait(1).to({x:395.05},0).wait(2).to({x:389.8},0).wait(1).to({x:379.3},0).wait(1).to({x:363.5},0).wait(1).to({x:342.5},0).wait(1).to({x:352.05},0).wait(1).to({x:358.45},0).wait(1).to({x:361.65},0).wait(2).to({x:358.45},0).wait(1).to({x:352.05},0).wait(1).to({x:342.5},0).wait(2));
 
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,885,298);
+p.nominalBounds = new cjs.Rectangle(0,0,877.7,298);
 
 
 // stage content:
@@ -142,7 +142,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/createJsPerfTest_atlas_1.png?1606051742766", id:"createJsPerfTest_atlas_1"}
+		{src:"images/createJsPerfTest_atlas_1.png?1606056956374", id:"createJsPerfTest_atlas_1"}
 	],
 	preloads: []
 };
