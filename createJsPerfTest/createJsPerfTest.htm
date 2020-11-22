@@ -50,6 +50,22 @@ function handleComplete(evt,comp) {
 	}
 	exportRoot = new lib.createJsPerfTest();
 	stage = new createjs.Stage(canvas);
+
+
+
+	var col = 36;
+	var num = 10000
+	for (var i = 0; i < num; i++) {
+
+		var mc = new lib.wolf_tween()
+		mc.x = i%col * 20;
+		mc.y = parseInt(i / col) * 12;
+		mc.scaleX = 0.05
+		mc.scaleY = 0.05
+		exportRoot.addChild(mc)
+
+	}
+
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
 		stage.addChild(exportRoot);
